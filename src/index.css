@@ -1,0 +1,188 @@
+:root {
+  color-scheme: dark;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #030708;
+  color: #dce8e2;
+}
+
+.hud-mono {
+  font-family: 'SF Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+}
+
+@keyframes pulseCrimson {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.78;
+  }
+}
+
+@keyframes warpScreen {
+  0% {
+    transform: scale(1) skewX(0deg);
+    filter: hue-rotate(0deg) contrast(1);
+  }
+  50% {
+    transform: scale(1.03) skewX(1.6deg);
+    filter: hue-rotate(-18deg) contrast(1.25);
+  }
+  100% {
+    transform: scale(1) skewX(-1.2deg);
+    filter: hue-rotate(14deg) contrast(1.15);
+  }
+}
+
+@keyframes spinSigil {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes spinSigilReverse {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes eldritchGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 18px rgba(72, 255, 186, 0.35), 0 0 40px rgba(20, 120, 90, 0.25);
+  }
+  50% {
+    text-shadow: 0 0 28px rgba(110, 255, 200, 0.7), 0 0 60px rgba(45, 195, 140, 0.45);
+  }
+}
+
+@keyframes driftFogMenu {
+  0% {
+    transform: translateX(-6%) translateY(0px);
+    opacity: 0.24;
+  }
+  50% {
+    transform: translateX(6%) translateY(-8px);
+    opacity: 0.42;
+  }
+  100% {
+    transform: translateX(-6%) translateY(0px);
+    opacity: 0.24;
+  }
+}
+
+@keyframes wingFlapLeft {
+  0%,
+  100% {
+    transform: rotate(-4deg) scaleY(1);
+  }
+  50% {
+    transform: rotate(14deg) scaleY(0.92);
+  }
+}
+
+@keyframes wingFlapRight {
+  0%,
+  100% {
+    transform: rotate(4deg) scaleY(1);
+  }
+  50% {
+    transform: rotate(-14deg) scaleY(0.92);
+  }
+}
+
+@keyframes tentacleWiggle {
+  0%,
+  100% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes eyeBlink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.1);
+  }
+}
+
+.sanity-warp-active {
+  animation: warpScreen 0.45s ease-in-out infinite alternate;
+}
+
+.danger-pulse {
+  animation: pulseCrimson 0.9s ease-in-out infinite;
+}
+
+.menu-title-glow {
+  animation: eldritchGlow 3.4s ease-in-out infinite;
+}
+
+.menu-sigil-cw {
+  animation: spinSigil 38s linear infinite;
+}
+
+.menu-sigil-ccw {
+  animation: spinSigilReverse 54s linear infinite;
+}
+
+.menu-fog-layer {
+  animation: driftFogMenu 14s ease-in-out infinite;
+}
+
+.cthulhu-wing-l {
+  transform-origin: 48px 54px;
+  animation: wingFlapLeft 1.2s ease-in-out infinite;
+}
+
+.cthulhu-wing-r {
+  transform-origin: 72px 54px;
+  animation: wingFlapRight 1.2s ease-in-out infinite;
+}
+
+.cthulhu-tentacle-a {
+  transform-origin: 54px 50px;
+  animation: tentacleWiggle 1.4s ease-in-out infinite;
+}
+
+.cthulhu-tentacle-b {
+  transform-origin: 60px 51px;
+  animation: tentacleWiggle 1.15s ease-in-out infinite reverse;
+}
+
+.cthulhu-tentacle-c {
+  transform-origin: 66px 50px;
+  animation: tentacleWiggle 1.55s ease-in-out infinite;
+}
+
+.cthulhu-eyes {
+  transform-origin: 60px 34px;
+  animation: eyeBlink 4.2s ease-in-out infinite;
+}
